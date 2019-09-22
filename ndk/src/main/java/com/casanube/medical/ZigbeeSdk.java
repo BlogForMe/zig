@@ -52,28 +52,25 @@ public class ZigbeeSdk {
     class DataThread extends Thread {
         @Override
         public void run() {
-//            try {
+            try {
             while (!isInterrupted()) {
                 Log.i("ZigbeeSdk", "DataThread" + "   run " + isInterrupted() + " " + Thread.currentThread().getName());
                 readDataZig();
-//                    Thread.sleep(1000);
+                    Thread.sleep(1000);
             }
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//                Log.i("ZigbeeSdk", "DataThread  interrupt " + isInterrupted());
-//                return;
-//            }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Log.i("ZigbeeSdk", "DataThread  interrupt " + isInterrupted());
+                return;
+            }
 
         }
     }
 
 
-//    String devices ="{\"cmd\":\"DEVICE_JOIN\",\"model\":\"240\",\"sid\":\"00124B000E915264\",\"short_addr\":0,\"endpoint\":0,\"data\":{\"hardwareVer\":\"1.1.01\",\"softwareVer\":\"2.1.01\"}}";
 
     public void readDataZig() {
         String ssCha = DevicePort.ReadString(CHANNEL);
-//        String ssCha = devices;
-//        Log.i("ZigbeeSdk", "sscat " + ssCha);
         if (!isEmpty(ssCha) && !"NULL".equals(ssCha) && !("OUT".equals(ssCha))) {
             try {
 //                Log.i("ZigbeeSdk", "ssCha " + ssCha);

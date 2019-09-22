@@ -7,6 +7,16 @@
 /build
 /captures
 .externalNativeBuild
+
 .idea/*
+app/release/
+.idea/modules.xml
+*/build/*
+.svn/
 */debug/*
-app/src/main/java/com/jonzhou/mineutils/storage/dao/greendaodemo/db/*
+TZdoctor/flavors_cs/
+/ble
+app/src/androidTest/*
+app/src/test/*
+app/src/main/java/com/casanube/medical/dao/*
+
